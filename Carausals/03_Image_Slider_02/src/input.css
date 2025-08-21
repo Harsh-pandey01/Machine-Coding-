@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@keyframes fadeOut {
+    0%{
+        opacity : 1 ;
+    }100%{
+        opacity: 0;
+    }
+}
+
+.carausal-slides{
+    opacity: 0;
+}
+
+
+
+@keyframes fadeIn {
+    0%{
+        opacity : 0 ;
+    }100%{
+        opacity: 1;
+    }
+}
