@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagination tab</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="min-h-screen w-full flex items-center">
+    <div
+      class="container w-full px-4 py-10 flex flex-col bg-white text-black min-h-screen mx-auto"
+    >
+      <!-- Breadcrumb -->
+      <div>
+        <p class="text-black/70 text-sm font-normal">Products ></p>
+      </div>
+
+      <!-- Grid layout -->
+      <div class="grid grid-cols-[300px_1fr] h-full flex-1 mt-2">
+        <div class=" max-h-full overflow-y-scroll h-full pr-2 border-r-1 border-black/20">
+          <h1 class="text-black/80 font-semibold">Filters</h1>
+          <input type="text" class="search-bar mt-2 px-2 py-1 outline-none rounded-sm w-full bg-black/10 text-black placeholder:text-black/40 text-sm" placeholder="Search items here"></input>
+          <div class="flex flex-col gap-1 mt-2">
+           <label for="price" class="font-normal text-sm">Price</label>
+           <input type="range" name="price" id="price" min="0" max="10000">
+          </div>
+          <div class="mt-2 flex flex-col">
+            <h1 class="text-sm font-normal ">Cateories</h1>
+           <div class="categories-options-container max-h-100 overflow-scroll flex flex-col gap-2 mt-2" >
+             
+           </div>
+            
+          </div>
+        </div>
+        <div class="bg-black/10 max-h-[90vh] flex flex-col p-2">
+            <div class="flex-1 overflow-scroll ">
+            <div class="products-container max-h-full grid grid-cols-[repeat(auto-fit,minmax(150px,200px))] gap-4 ">
+                    
+            </div>
+             </div>
+             <div class="pagination-container p-4 gap-2 flex text-center items-center justify-center">
+                
+            </div>
+
+            
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
