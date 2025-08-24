@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator !!</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="bg-neutral-700 flex items-center justify-center w-full h-screen">
+    <div
+      class="p-4 rounded-xl bg-white flex flex-col gap-4 text-black w-100 h-fit"
+    >
+      <div
+        class="password-input flex w-full gap-2 px-3 py-1 border-1 rounded-xl border-neutral-400 text-black"
+      >
+        <input
+          type="text"
+          name="password-text"
+          id="password-text"
+          class="text-black flex-1 border-none outline-none"
+          readonly
+        />
+        <i class="ri-file-copy-line cursor-pointer copy-btn"></i>
+      </div>
+
+      <div class="relative flex gap-2">
+        <input
+          type="range"
+          name="range"
+          id="range-input"
+          min="5"
+          max="20"
+          value="10"
+          class="flex-1"
+        />
+        <p class="text-blue-300 range-value">10</p>
+      </div>
+      <button
+        class="w-full py-2 px-2 generate-pass-btn bg-blue-400 cursor-pointer text-white rounded-xl"
+      >
+        Generate Password
+      </button>
+    </div>
+  </body>
+</html>
