@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body class="bg-neutral-600 flex items-center justify-center">
+    <form action="" class="bg-white w-150 mt-10 p-4 rounded-sm">
+      <div class="flex flex-col gap-2">
+        <div class="grid grid-cols-2 gap-2">
+          <div class="flex flex-col">
+            <label for="FirstName">FirstName</label>
+            <input type="text" id="FirstName" name="FirstName" />
+            <p class="text-red-500 text-sm FirstNameError"></p>
+          </div>
+          <div class="flex flex-col">
+            <label for="LastName">LastName</label>
+            <input type="text" id="LastName" name="LastName" />
+            <p class="text-red-500 text-sm LastNameError"></p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="flex flex-col">
+            <label for="ParentFirstName">Parent FirstName</label>
+            <input type="text" id="ParentFirstName" name="ParentFirstName" />
+            <p class="text-red-500 text-sm ParentFirstNameError"></p>
+          </div>
+          <div class="flex flex-col">
+            <label for="ParentLastName">Parent LastName</label>
+            <input type="text" id="ParentLastName" name="ParentLastName" />
+            <p class="text-red-500 text-sm ParentLastNameError"></p>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label for="Phone">Contact Number</label>
+          <input type="Number" id="Phone" name="Phone" />
+          <p class="text-red-500 text-sm PhoneError"></p>
+        </div>
+
+        <div class="flex flex-col">
+          <label for="Email">Email</label>
+          <input type="email" name="Email" />
+          <p class="text-red-500 text-sm EmailError"></p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Password">Password</label>
+          <input type="password" name="Password" id="Password" />
+          <p class="text-red-500 text-sm PasswordError"></p>
+        </div>
+
+        <div
+          class="bg-neutral-200 rounded-sm flex items-center justify-center w-fit px-2 py-2 mt-5 text-center"
+        >
+          <input type="checkbox" name="Captcha" class="h-5 w-5" id="Captcha" />
+          <p class="text-sm px-2">I'm not a robot</p>
+          <img
+            src="../assets/06_assets/RecaptchaLogo.svg"
+            class="h-10"
+            alt=""
+          />
+        </div>
+
+        <button
+          class="w-full SubmitBtn bg-blue-600 text-white py-3 rounded-sm mt-5 cursor-pointer"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
