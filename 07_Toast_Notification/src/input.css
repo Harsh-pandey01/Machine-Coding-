@@ -1,0 +1,19 @@
+@import "tailwindCss";
+
+@theme {
+   --animate-progress : progress 3s linear forwards;
+   --animate-slide : slide 200ms linear forwards ;
+    @keyframes progress {
+        from{
+            width:100% ;
+        }
+        to{
+            width:0% ;
+        }
+    }
+    @keyframes slide {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+}

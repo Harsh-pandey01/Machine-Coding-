@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast Notification</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body
+    class="bg-neutral-800 relative h-screen flex items-center justify-center"
+  >
+    <div class="flex flex-col gap-4 bg-white p-4 w-40">
+      <button
+        class="success-btn px-4 py-2 bg-blue-600 text-white rounded-sm cursor-pointer transition duration-200 hover:bg-blue-800"
+      >
+        Success
+      </button>
+      <button
+        class="error-btn px-4 py-2 bg-red-600 text-white rounded-sm cursor-pointer transition duration-200 hover:bg-red-800"
+      >
+        Error
+      </button>
+    </div>
+
+    <div
+      class="toasts-container flex flex-col p-2 gap-4 top-10 absolute right-10 overflow-hidden"
+    ></div>
+  </body>
+</html>

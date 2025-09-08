@@ -104,8 +104,6 @@ const validateForm = (formData) => {
 
 const showErrors = (errors) => {
   document.querySelectorAll("Form p").forEach((elem) => {
-    console.log(elem);
-
     elem.textContent = "";
   });
   errorObj = {};
