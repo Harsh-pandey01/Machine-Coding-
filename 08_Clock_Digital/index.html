@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="h-screen w-screen flex items-center justify-center text-black">
+    <div
+      class="bg-gray-200 rounded-full h-64 w-64 relative flex items-center justify-center"
+    >
+      <div style="--i: 1" class="text-sm time">1</div>
+      <div style="--i: 2" class="text-sm time">2</div>
+      <div style="--i: 3" class="text-sm time">3</div>
+      <div style="--i: 4" class="text-sm time">4</div>
+      <div style="--i: 5" class="text-sm time">5</div>
+      <div style="--i: 6" class="text-sm time">6</div>
+      <div style="--i: 7" class="text-sm time">7</div>
+      <div style="--i: 8" class="text-sm time">8</div>
+      <div style="--i: 9" class="text-sm time">9</div>
+      <div style="--i: 10" class="text-sm time">10</div>
+      <div style="--i: 11" class="text-sm time">11</div>
+      <div style="--i: 12" class="text-sm time">12</div>
+
+      <div class="absolute h-2.5 w-2.5 bg-red-600 rounded-full">
+        <div
+          class="h-20 w-[2px] sec-hand origin-bottom rotate-10 bg-black absolute bottom-0 left-1/2 -translate-x-1/2"
+        ></div>
+        <div
+          class="h-20 w-[2px] mins-hand origin-bottom rotate-10 bg-black absolute bottom-0 left-1/2 -translate-x-1/2"
+        ></div>
+        <div
+          class="h-15 origin-bottom hrs-hand w-1.5 bg-red-400 absolute bottom-0 left-1/2 -translate-x-1/2"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>

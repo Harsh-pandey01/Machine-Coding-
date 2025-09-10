@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+.time {
+  position: absolute;
+  transform: rotate(calc(var(--i)*(360deg /12))) ;
+  text-align: center;
+ 
+  inset: 20px;
+  /* Explanation:
+     - First rotate to angle
+     - Then translate outward (radius)
+     - Then rotate back to keep upright */
+}
+
