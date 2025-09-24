@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body
+    class="bg-black h-screen w-full flex items-center justify-center font-white"
+  >
+    <div class="grid grid-cols-2 gap-4 [&>*]:h-50 w-100">
+      <div class="relative box border border-white cursor-pointer rounded-sm">
+        <div
+          class="image h-full w-full overflow-hidden object-cover"
+          draggable="true"
+        >
+          <img
+            class="h-full w-full"
+            src="../assets/09_assets/img.jpg"
+            alt="img"
+          />
+        </div>
+      </div>
+      <div class="relative box border border-white rounded-sm"></div>
+      <div class="relative box border border-white rounded-sm"></div>
+      <div class="relative box border border-white rounded-sm"></div>
+    </div>
+  </body>
+  <script>
+    const boxes = document.querySelectorAll(".box");
+    const image = document.querySelector(".image");
+    let currentImgContainer = boxes[0]; // Where the image starts
+
+    boxes.forEach((box) => {
+      // Allow drop by preventing default on dragover
+      box.addEventListener("dragover", (e) => {
+        e.preventDefault();
+      });
+
+      box.addEventListener("drop", (e) => {
+        e.preventDefault();
+
+        if (box !== currentImgContainer) {
+          box.appendChild(image);
+          currentImgContainer = box;
+        }
+      });
+    });
+  </script>
+</html>
