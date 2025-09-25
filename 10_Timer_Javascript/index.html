@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="bg-neutral-900 flex items-center justify-center h-screen w-full">
+    <div class="bg-white text-black px-8 py-4 rounded-md">
+      <h1 class="text-center font-semibold">Timer</h1>
+      <div class="flex items-center gap-3 my-4">
+        <div class="flex flex-col gap-1">
+          <label for="hours" class="text-sm">Hours</label>
+          <input
+            id="hours"
+            type="number"
+            placeholder="00"
+            class="border border-black rounded-sm text-center p-2 w-10"
+          />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="mins">Min</label>
+          <input
+            id="mins"
+            type="number"
+            placeholder="00"
+            class="border border-black rounded-sm text-center p-2 w-10"
+          />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="secs">Secs</label>
+          <input
+            id="secs"
+            type="number"
+            placeholder="00"
+            class="border border-black rounded-sm text-center p-2 w-10"
+          />
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2">
+        <button
+          class="p-1 cursor-pointer reset-btn text-sm rounded-sm border border-black"
+        >
+          Reset
+        </button>
+        <button
+          class="p-1 cursor-pointer pause-btn text-sm rounded-sm border border-black"
+        >
+          Pause
+        </button>
+        <button
+          class="p-1 cursor-pointer start-btn text-sm rounded-sm border border-black"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const startBtn = document.querySelector(".start-btn");
+    const resetBtn = document.querySelector(".reset-btn");
+    const pauseBtn = document.querySelector(".pause-btn");
+
+    const hours = document.querySelector("#hours");
+    const mins = document.querySelector("#mins");
+    const secs = document.querySelector("#secs");
+
+    let currentTimerID = null;
+    let isPaused = false;
+
+    const getTimeInSeconds = () => {
+      const h = parseInt(hours.value) || 0;
+      const m = parseInt(mins.value) || 0;
+      const s = parseInt(secs.value) || 0;
+      return h * 3600 + m * 60 + s;
+    };
+
+    const setTimeFromSeconds = (totalSeconds) => {
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+
+      hours.value = h.toString().padStart(2, "0");
+      mins.value = m.toString().padStart(2, "0");
+      secs.value = s.toString().padStart(2, "0");
+    };
+
+    const startTimer = () => {
+      if (currentTimerID !== null) return; // Prevent multiple timers
+
+      let timeLeft = getTimeInSeconds();
+
+      if (timeLeft <= 0) return;
+
+      currentTimerID = setInterval(() => {
+        if (!isPaused) {
+          if (timeLeft > 0) {
+            timeLeft--;
+            setTimeFromSeconds(timeLeft);
+          } else {
+            clearInterval(currentTimerID);
+            currentTimerID = null;
+            alert("Time's up!");
+          }
+        }
+      }, 1000);
+    };
+
+    const resetTimer = () => {
+      clearInterval(currentTimerID);
+      currentTimerID = null;
+      isPaused = false;
+      pauseBtn.textContent = "Pause";
+
+      hours.value = "";
+      mins.value = "";
+      secs.value = "";
+    };
+
+    const pauseTimer = () => {
+      if (currentTimerID === null) return;
+
+      isPaused = !isPaused;
+      pauseBtn.textContent = isPaused ? "Resume" : "Pause";
+    };
+
+    startBtn.onclick = startTimer;
+    resetBtn.onclick = resetTimer;
+    pauseBtn.onclick = pauseTimer;
+  </script>
+</html>
