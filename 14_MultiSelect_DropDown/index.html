@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiselect_DropDown</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-white h-screen w-full font-pop p-2">
+    <header
+      class="relative flex border border-neutral-200 container mx-auto rounded-full shadown-sm items-center justify-between px-4"
+    >
+      <div>Coder</div>
+      <div class="">
+        <nav class="sm:flex">
+          <ul
+            class="absolute main-nav hidden top-[110%] rounded-sm w-full right-0 p-4 bg-neutral-100 sm:relative sm:bg-transparent sm:p-0 sm:flex items-center gap-10 text-sm text-neutral-600 [&>*]:hover:text-neutral-900"
+          >
+            <li class="py-2 cursor-pointer relative transition duration-150">
+              Home
+            </li>
+            <li
+              class="py-2 cursor-pointer relative group transition duration-150"
+            >
+              Dropdown1
+              <ul
+                class="sm:absolute left-0 hidden group-hover:flex bg-neutral-50 flex-col rounded-sm top-full"
+              >
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 1
+                </li>
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 2
+                </li>
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 3
+                </li>
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 4
+                </li>
+              </ul>
+            </li>
+            <li
+              class="py-2 cursor-pointer group relative transition duration-150"
+            >
+              Dropdown2
+              <ul
+                class="sm:absolute left-0 hidden group-hover:flex bg-neutral-50 flex-col rounded-sm top-full"
+              >
+                <li
+                  class="whitespace-nowrap group/nested relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 1
+                  <ul
+                    class="sm:absolute bg-neutral-50 hidden group-hover/nested:flex flex-col left-full top-0"
+                  >
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                    <li
+                      class="whitespace-nowrap relative px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                    >
+                      Deep Nested
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 2
+                </li>
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 3
+                </li>
+                <li
+                  class="whitespace-nowrap px-5 py-2 cursor-pointer hover:bg-neutral-200"
+                >
+                  Nested 4
+                </li>
+              </ul>
+            </li>
+            <li class="py-2 cursor-pointer relative transition duration-150">
+              About
+            </li>
+            <li class="py-2 cursor-pointer relative transition duration-150">
+              Contact
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="sm:hidden py-2 cursor-pointer hover:bg-neutral-200 transition duration-200 px-3 rounded-full"
+        >
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+    </header>
+  </body>
+  <script>
+    const nav = document.querySelector(".main-nav");
+    const menu = document.querySelector("i");
+    menu.addEventListener("click", () => {
+      nav.classList.toggle("hidden");
+    });
+  </script>
+</html>
