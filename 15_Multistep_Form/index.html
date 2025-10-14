@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multistep Form</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="bg-neutral-900 text-white w-full h-screen flex justify-center">
+    <div
+      class="max-w-250 flex flex-col w-250 bg-neutral-800 min-h-screen rounded-xl px-10 py-10"
+    >
+      <div class="relative mx-auto w-150 flex">
+        <!-- Progress bar -->
+        <div class="w-full h-1 bg-neutral-700 rounded-full relative">
+          <div
+            class="progress-bar h-full left-0 top-0 absolute bg-amber-400 rounded-full transition-all ease-in duration-300"
+          ></div>
+        </div>
+
+        <!--Steps wrapper-->
+        <div
+          class="absolute w-full left-0 top-1/2 -translate-y-1/2 flex items-center justify-between"
+        >
+          <div
+            class="step step-1 h-8 w-8 bg-neutral-900 rounded-full flex items-center justify-center"
+          >
+            1
+          </div>
+          <div
+            class="step step-2 h-8 w-8 bg-neutral-900 rounded-full flex items-center justify-center"
+          >
+            2
+          </div>
+          <div
+            class="step step-3 h-8 w-8 bg-neutral-900 rounded-full flex items-center justify-center"
+          >
+            3
+          </div>
+          <div
+            class="step step-4 h-8 w-8 bg-neutral-900 rounded-full flex items-center justify-center"
+          >
+            4
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-150 mx-auto max-w-150 text-black bg-white flex-1 rounded-2xl mt-10 px-10 py-10"
+      >
+        <!-- Form Container for the  form -->
+        <form class="form-wrapper relative h-full w-full" id="form">
+          <!-- page 1 -->
+          <div
+            class="page page-1 absolute h-full w-full left-0 top-0 rounded-md z-10 bg-white"
+          >
+            <h1>Personal Info</h1>
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="fname" class="text-xs">First Name</label>
+              <input
+                type="text"
+                name="fname"
+                id="fname"
+                placeholder="first Name"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="lname" class="text-xs">Last Name</label>
+              <input
+                type="text"
+                name="lname"
+                id="lname"
+                placeholder="Last Name"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="email" class="text-xs">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="phone" class="text-xs">Phone</label>
+              <input
+                type="number"
+                name="phone"
+                id="phone"
+                placeholder="phone"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-4">
+              <label for="gender" class="text-xs">Gender</label>
+              <div class="flex items-center gap-5 mt-1">
+                <div class="flex items-center gap-1">
+                  <input type="radio" name="gender" id="gender" value="Male" />
+                  <span class="text-xs">Male</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender"
+                    value="female"
+                  />
+                  <span class="text-xs">Female</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 2 -->
+
+          <div
+            class="page page-2 absolute h-full w-full left-0 top-0 rounded-md bg-white hidden"
+          >
+            <h1>Educational Details</h1>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="qualification" class="text-xs"
+                >Highest Qualification</label
+              >
+              <input
+                type="text"
+                name="qualification"
+                id="qualification"
+                placeholder="e.g., Bachelor's in Computer Science"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="university" class="text-xs"
+                >University / College</label
+              >
+              <input
+                type="text"
+                name="university"
+                id="university"
+                placeholder="e.g., XYZ University"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="passingYear" class="text-xs">Year of Passing</label>
+              <input
+                type="number"
+                name="passingYear"
+                id="passingYear"
+                placeholder="e.g., 2023"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="grade" class="text-xs">Grade / Percentage</label>
+              <input
+                type="text"
+                name="grade"
+                id="grade"
+                placeholder="e.g., 8.5 CGPA or 85%"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+          </div>
+
+          <!--  page 3 -->
+
+          <div
+            class="page page-3 absolute bg-white h-full w-full left-0 top-0 rounded-md hidden"
+          >
+            <h1>Address & Other Details</h1>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="address" class="text-xs">Address</label>
+              <textarea
+                name="address"
+                id="address"
+                rows="3"
+                placeholder="Enter your full address"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              ></textarea>
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="city" class="text-xs">City</label>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                placeholder="City"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="state" class="text-xs">State</label>
+              <input
+                type="text"
+                name="state"
+                id="state"
+                placeholder="State"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-2">
+              <label for="zipcode" class="text-xs">Zip Code</label>
+              <input
+                type="text"
+                name="zipcode"
+                id="zipcode"
+                placeholder="e.g., 123456"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-4">
+              <label for="dob" class="text-xs">Date of Birth</label>
+              <input
+                type="date"
+                name="dob"
+                id="dob"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1 mt-4">
+              <label for="maritalStatus" class="text-xs">Marital Status</label>
+              <select
+                name="maritalStatus"
+                id="maritalStatus"
+                class="border border-neutral-500 text-xs rounded-md px-2 py-1.5"
+              >
+                <option value="">Select</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+              </select>
+            </div>
+          </div>
+
+          <div
+            class="page page-1 absolute h-full w-full left-0 top-0 rounded-md z-10 bg-white"
+          >
+            Successully Submitted
+          </div>
+        </form>
+      </div>
+      <div class="w-150 mt-5 mx-auto max-w-150">
+        <div class="flex items-center justify-end gap-5">
+          <button
+            class="text-sm px-4 shadow-2xl py-1.5 cursor-pointer prev-btn hidden"
+          >
+            Prev
+          </button>
+          <button class="text-sm px-4 py-1.5 cursor-pointer next-btn">
+            Next
+          </button>
+          <button class="text-sm px-4 py-1.5 cursor-pointer submit-btn hidden">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
