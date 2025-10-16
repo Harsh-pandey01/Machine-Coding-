@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black h-screen w-full flex items-center justify-center">
+    <div id="accordion" class="w-[600px] flex flex-col gap-2"></div>
+
+    <script>
+      const wrapper = document.getElementById("accordion");
+
+      const accordionConfig = [
+        {
+          title: "What is an accordion?",
+          response:
+            "It is a UI component that expands to show hidden content when toggled.",
+        },
+        {
+          title: "How does it work?",
+          response:
+            "It toggles visibility of content panels using JavaScript or CSS.",
+        },
+        {
+          title: "Why use an accordion?",
+          response:
+            "To manage large content in a compact space and improve UX.",
+        },
+      ];
+
+      let openIndex = null; // Track currently open accordion
+
+      // Render accordion
+      wrapper.innerHTML = accordionConfig
+        .map(
+          (item, index) => `
+        <div class="bg-white rounded overflow-hidden shadow">
+          <button 
+            class="w-full text-left px-4 py-3 font-semibold focus:outline-none flex justify-between items-center" 
+            onclick="toggleAccordion(${index})"
+          >
+            ${item.title}
+            <span id="icon-${index}">+</span>
+          </button>
+          <div id="panel-${index}" class="max-h-0 overflow-hidden transition-all duration-300 px-4 bg-gray-100">
+            <p class="py-3">${item.response}</p>
+          </div>
+        </div>
+      `
+        )
+        .join("");
+
+      function toggleAccordion(index) {
+        accordionConfig.forEach((_, i) => {
+          const panel = document.getElementById(`panel-${i}`);
+          const icon = document.getElementById(`icon-${i}`);
+
+          if (i === index) {
+            const isOpen = openIndex === index;
+            if (isOpen) {
+              // Close it
+              panel.classList.add("max-h-0");
+              panel.classList.remove("max-h-40");
+              icon.textContent = "+";
+              openIndex = null;
+            } else {
+              // Open it
+              panel.classList.remove("max-h-0");
+              panel.classList.add("max-h-40");
+              icon.textContent = "−";
+              openIndex = index;
+            }
+          } else {
+            // Close others
+            panel.classList.add("max-h-0");
+            panel.classList.remove("max-h-40");
+            icon.textContent = "+";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
